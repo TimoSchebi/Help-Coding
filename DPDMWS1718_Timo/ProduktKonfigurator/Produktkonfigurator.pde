@@ -27,9 +27,9 @@ PImage myImage12;
 
 void setup() {
   size(1024, 768);
-  OnOffTest = new toggleButton(170, 130);
-  tabButtonTest = new tabButton(100, 300, 4);
-  tabButtonTest2 = new tabButton2(100, 400, 4);
+  OnOffTest = new toggleButton(100, 130);
+  tabButtonTest = new tabButton(30, 250, 4);
+  tabButtonTest2 = new tabButton2(30, 350, 4);
   myFontUI = createFont("lmmono10-regular.otf", 32);
   myFont = createFont("Montserrat-Regular.ttf", 25);
   myFont1 = createFont("Blacksword.otf", 25);
@@ -52,19 +52,22 @@ void setup() {
 
 void draw() {
   colorMode(RGB, 255, 255, 255);
-  background(255);  
+  background(myImage3);  
   noTint();
-  colorMode(HSB, 360, 100, 100);
+  colorMode(HSB, 0, 0, 0);
+  fill(0,0,0);
   textFont(myFontUI);
-  text("Stoff", 90, 135);
-  text("Leder", 240, 135);
-  text("Farbe", 200, 280);
+  text("Stoff", 15, 150);
+  text("Leder", 165, 150);
+  text("Farbvariation", 20, 230);
+  text("Ausstattung", 35, 330);
   textFont(myFont4);
-  text("Couch", 500, 30);
+  text("Couchkonfigurator", 270, 40);
+  
  
 
-  colorMode(RGB, 255, 255, 255);
-  fill(150);
+  colorMode(RGB, 0, 0, 0);
+  fill(0);
  
   
   
@@ -78,9 +81,9 @@ void draw() {
   // "OnOffTest" bestimmt ob leder/Stoff
   noStroke();
   if (OnOffTest.myStateActive) {
-    image(myImage2,350, 110);
+    image(myImage2,280, 110);
   } else {
-    image(myImage1,350, 110);
+    image(myImage1,280, 110);
   }
     
 
@@ -88,11 +91,11 @@ void draw() {
   // "tabButtonTest" bestimmt 3 farbvarianten
   if (OnOffTest.myStateActive) {
   if (tabButtonTest.activeTab == 0) {
-    image(myImage2, 350, 110);
+    image(myImage2, 280, 110);
   } else if (tabButtonTest.activeTab == 1) {
-    image(myImage4, 350, 110);
+    image(myImage4, 280, 110);
   } else if (tabButtonTest.activeTab == 2) {
-      image(myImage5, 350, 110);
+      image(myImage5, 280, 110);
   }
   }
   
@@ -100,13 +103,13 @@ void draw() {
   if (OnOffTest.myStateActive) {
     if (tabButtonTest.activeTab == 0) {
   if (tabButtonTest2.activeTab == 0) {
-    image(myImage5, 350, 110);
+    image(myImage5, 280, 110);
   } 
   else if (tabButtonTest2.activeTab == 1) {
-  image(myImage7, 350, 110);
+  image(myImage7, 280, 110);
   } 
   else if (tabButtonTest2.activeTab == 2) {
-  image(myImage6, 350, 110);
+  image(myImage6, 280, 110);
   }
   }
   }
@@ -114,13 +117,13 @@ void draw() {
   if (OnOffTest.myStateActive) {
     if (tabButtonTest.activeTab == 1) {
   if (tabButtonTest2.activeTab == 0) {
-    image(myImage4, 350, 110);
+    image(myImage4, 280, 110);
   } 
   else if (tabButtonTest2.activeTab == 1) {
-  image(myImage9, 350, 110);
+  image(myImage9, 280, 110);
   } 
   else if (tabButtonTest2.activeTab == 2) {
-  image(myImage8, 350, 110);
+  image(myImage8, 280, 110);
   }
   }
   }
@@ -128,13 +131,13 @@ void draw() {
     if (OnOffTest.myStateActive) {
     if (tabButtonTest.activeTab == 2) {
   if (tabButtonTest2.activeTab == 0) {
-    image(myImage2, 350, 110);
+    image(myImage2, 280, 110);
   } 
   else if (tabButtonTest2.activeTab == 1) {
-  image(myImage11, 350, 110);
+  image(myImage11, 280, 110);
   } 
   else if (tabButtonTest2.activeTab == 2) {
-  image(myImage10, 350, 110);
+  image(myImage10, 280, 110);
   }
   }
   }
